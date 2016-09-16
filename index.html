@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+<script src="jquery-3.1.0.js"></script>
+<script>
+$(document).ready(function(){
+    /* hipsun wanha, poistetaan jossain välissä
+    $(".stackBase").hover(function(){
+        $(this).find("*").stop(true, false).animate({
+            left: "12px",
+            bottom: "40px"
+        }, {duration: "fast"});
+    }, function() {
+        $(this).find("*").stop(true, false).animate({
+            left: "7px",
+            bottom: "14px"
+        }, {duration: "fast"});
+    });
+    */
+ 
+    $(".map").mouseup(function(){
+        $(this).find("*").fadeIn();
+    });
+    $(".map").mousedown(function(){
+        $(this).find("*").delay("slow").fadeOut();
+    });
+ 
+    $("#matkaaja-nappi").click(function() {
+        var matkaaja = $("#matkaaja");
+ 
+        matkaaja.toggleClass('col-R col-S');
+        window.setTimeout(function() {
+            matkaaja.toggleClass('row-3 row-2');
+        }, 450);
+ 
+    })
+});
+</script>
+</head>
+ 
+<style>
+div.map {
+    position: absolute;
+    width: 875px;
+    height: 970px;
+    border: 1px solid black;
+    background-image: url("./pictures/map150.png");
+}
+ 
+.stackBase {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+	transition: 350ms all ease;
+}
+ 
+/* Tälläiset saa helposti sassilla tai lessillä,
+   mutta tänään käsin purkkamaisesti... */
+.stackBase > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 250ms all ease;
+ }
+
+.stackBase > img:nth-child(2) { left: 5px; top: -5px;}
+.stackBase > img:nth-child(3) { left: 10px; top: -10px;}
+.stackBase > img:nth-child(4) { left: 15px; top: -15px;}
+.stackBase > img:nth-child(5) { left: 20px; top: -20px;}
+.stackBase > img:nth-child(6) { left: 25px; top: -25px;}
+.stackBase > img:nth-child(7) { left: 30px; top: -30px;}
+.stackBase > img:nth-child(8) { left: 35px; top: -35px;}
+.stackBase > img:nth-child(9) { left: 40px; top: -40px;}
+.stackBase > img:nth-child(10) { left: 45px; top: -45px;}
+ 
+.stackBase:hover > img { z-index: 10; transform: scale(1.5); }
+.stackBase:hover > img:nth-child(2) { left: 75px; top: -25px;}
+.stackBase:hover > img:nth-child(3) { left: 150px; top: -50px;}
+.stackBase:hover > img:nth-child(4) { left: 225px; top: -75px;}
+ 
+.stackBase:hover > img:nth-child(5) { left: 75px; top: 50px;}
+.stackBase:hover > img:nth-child(6) { left: 150px; top: 25px;}
+.stackBase:hover > img:nth-child(7) { left: 225px; top: -0px;}
+ 
+.stackBase:hover > img:nth-child(8) { left: 75px; top: -100px;}
+.stackBase:hover > img:nth-child(9) { left: 150px; top: -125px;}
+.stackBase:hover > img:nth-child(10) { left: 225px; top: -150px;}
+ 
+.col-J { left: 30px; }
+.col-K { left: 115px; }
+.col-L { left: 200px; }
+.col-M { left: 285px; }
+.col-N { left: 370px; }
+.col-O { left: 445px; }
+.col-P { left: 540px; }
+.col-Q { left: 625px; }
+.col-R { left: 710px;}
+.col-S { left: 795px; }
+ 
+.row-1 { top: 75px; }
+.row-2 { top: 172px; }
+.row-3 { top: 269px; }
+.row-4 { top: 366px; }
+.row-5 { top: 463px; }
+.row-6 { top: 560px; }
+.row-7 { top: 754px; }
+.row-8 { top: 775px; }
+.row-9 { top: 851px; }
+.row-10 { top: 948px; }
+ 
+.col-K, .col-M, .col-O, .col-Q, .col-S {
+    margin-top: -40px;
+}
+ 
+</style>
+ 
+<body>
+<h1>My First Heading</h1>
+<p>Jos klikkaat mitä vain pelimerkit feidaa ja tulee takas. Ideana on, että jos kartalla pistää hiiren napin pohjaan,
+    niin sekunnin päästä pelimerkit menee piiloon, mutta tällä hetkellä menee piiloon kaikista klikeistä, sekunnin päästä -__-</p>
+ 
+<button id="matkaaja-nappi">Siirrä matkaajaa!</button>
+ 
+<!--Kartan populointi-->
+<div class="map">
+ 
+    <div class="stackBase col-S row-2" id="matkaaja">
+        <img src="./pictures/dm.gif">
+        <img src="./pictures/geLMG.gif">
+    </div>
+ 
+    <div class="stackBase col-J row-1">
+        <img id="j1broken" src="./pictures/ges7b.gif">
+        <img src="./pictures/dm.gif">
+        <img src="./pictures/geLMG.gif">
+    </div>
+ 
+    <div class="stackBase col-J row-4" id="j4">
+        <img id="j4broken" src="./pictures/rus7b.gif">
+        <img src="./pictures/dm.gif">
+        <img src="./pictures/ruL70.gif">
+    </div>
+ 
+    <div class="stackBase col-J row-6" id="j6">
+        <img id="asdf" src="./pictures/ges7b.gif">
+        <img src="./pictures/ges7b.gif">
+        <img src="./pictures/geh4b.gif">
+        <img src="./pictures/dm.gif">
+        <img src="./pictures/geL102.gif">
+        <img src="./pictures/pin.gif">
+ 
+        <img src="./pictures/pin.gif">
+        <img src="./pictures/pin.gif">
+        <img src="./pictures/pin.gif">
+        <img src="./pictures/pin.gif">
+    </div>
+ 
+    <div class="stackBase col-J row-9" id="j9">
+        <img src="./pictures/geL80.gif">
+    </div>
+ 
+    <div class="stackBase" id="j9" style="left: 115px; top: 30px">
+        <img src="./pictures/ru447S.gif">
+    </div>
+ 
+    <div class="stackBase" id="m2" style="left: 280px; top: 120px">
+        <img src="./pictures/Lev2.gif">
+        <img id="m2broken" src="./pictures/rus7b.gif">
+        <img src="./pictures/dm.gif">
+        <img src="./pictures/ruHMG.gif">
+        <img src="./pictures/ruL91.gif">
+        <img src="./pictures/ruHero.gif">
+    </div>
+ 
+</div>
+ 
+</body>
+</html>
