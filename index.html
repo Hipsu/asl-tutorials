@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="animate.css">
     <meta charset="utf-8"></meta>
 <script src="jquery-3.1.0.js"></script>
 <script>
 $(document).ready(function(){
-    /* hipsun wanha, poistetaan jossain välissä
+    /* hipsun wanhoja, poistetaan jossain välissä. Tämä tässä laukee heti kun sivu latautuu
+    $("#m2broken").fadeOut().fadeIn();
+
+    /* wanha hover
     $(".stackBase").hover(function(){
         $(this).find("*").stop(true, false).animate({
             left: "12px",
@@ -52,7 +56,11 @@ div.map {
     position: absolute;
     width: 50px;
     height: 50px;
-	transition: 350ms all ease;
+    transition: 350ms all ease;
+}
+
+.pulser {
+    animation: pulse 1s infinite
 }
  
 /* Tälläiset saa helposti sassilla tai lessillä,
@@ -62,7 +70,7 @@ div.map {
     left: 0;
     top: 0;
     transition: 250ms all ease;
- }
+}
 
 .stackBase > img:nth-child(2) { left: 5px; top: -5px;}
 .stackBase > img:nth-child(3) { left: 10px; top: -10px;}
@@ -137,8 +145,8 @@ div.map {
     </div>
  
     <div class="stackBase col-J row-4" id="j4">
-        <img id="j4broken" src="./pictures/rus7b.gif">
-        <img src="./pictures/dm.gif">
+        <img id="j4broken" src="./pictures/rus7b.gif" class="pulser">
+        <img src="./pictures/dm.gif" class="pulser">
         <img src="./pictures/ruL70.gif">
     </div>
  
@@ -150,10 +158,6 @@ div.map {
         <img src="./pictures/geL102.gif">
         <img src="./pictures/pin.gif">
  
-        <img src="./pictures/pin.gif">
-        <img src="./pictures/pin.gif">
-        <img src="./pictures/pin.gif">
-        <img src="./pictures/pin.gif">
     </div>
  
     <div class="stackBase col-J row-9" id="j9">
@@ -166,8 +170,8 @@ div.map {
  
     <div class="stackBase" id="m2" style="left: 280px; top: 120px">
         <img src="./pictures/Lev2.gif">
-        <img id="m2broken" src="./pictures/rus7b.gif">
-        <img src="./pictures/dm.gif">
+        <img id="m2broken" src="./pictures/rus7b.gif" class="pulser">
+        <img src="./pictures/dm.gif" class="pulser">
         <img src="./pictures/ruHMG.gif">
         <img src="./pictures/ruL91.gif">
         <img src="./pictures/ruHero.gif">
