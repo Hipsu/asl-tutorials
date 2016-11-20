@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8"></meta>
 <script src="jquery-3.1.0.js"></script>
 <script>
@@ -22,162 +23,199 @@ $(document).ready(function(){
         }, {duration: "fast"});
     });
     */
- 
+
     $(".map").mouseup(function(){
         $(this).find("*").fadeIn();
     });
     $(".map").mousedown(function(){
         $(this).find("*").delay("slow").fadeOut();
     });
- 
+
     $("#matkaaja-nappi").click(function() {
         var matkaaja = $("#matkaaja");
- 
-        matkaaja.toggleClass('col-R col-S');
+
+        matkaaja.toggleClass('col-K col-J');
         window.setTimeout(function() {
-            matkaaja.toggleClass('row-3 row-2');
+            matkaaja.toggleClass('row-7 row-8');
         }, 450);
- 
+
     })
 });
 </script>
 </head>
- 
-<style>
-div.map {
-    position: absolute;
-    width: 875px;
-    height: 970px;
-    border: 1px solid black;
-    background-image: url("./images/map150.png");
-}
- 
-.stackBase {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    transition: 350ms all ease;
-}
 
-.pulser {
-    animation: pulse 1s infinite
-}
- 
-/* Tälläiset saa helposti sassilla tai lessillä,
-   mutta tänään käsin purkkamaisesti... */
-.stackBase > img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: 250ms all ease;
-}
-
-.stackBase > img:nth-child(2) { left: 5px; top: -5px;}
-.stackBase > img:nth-child(3) { left: 10px; top: -10px;}
-.stackBase > img:nth-child(4) { left: 15px; top: -15px;}
-.stackBase > img:nth-child(5) { left: 20px; top: -20px;}
-.stackBase > img:nth-child(6) { left: 25px; top: -25px;}
-.stackBase > img:nth-child(7) { left: 30px; top: -30px;}
-.stackBase > img:nth-child(8) { left: 35px; top: -35px;}
-.stackBase > img:nth-child(9) { left: 40px; top: -40px;}
-.stackBase > img:nth-child(10) { left: 45px; top: -45px;}
- 
-.stackBase:hover > img { z-index: 10; transform: scale(1.5); }
-.stackBase:hover > img:nth-child(2) { left: 75px; top: -25px;}
-.stackBase:hover > img:nth-child(3) { left: 150px; top: -50px;}
-.stackBase:hover > img:nth-child(4) { left: 225px; top: -75px;}
- 
-.stackBase:hover > img:nth-child(5) { left: 75px; top: 50px;}
-.stackBase:hover > img:nth-child(6) { left: 150px; top: 25px;}
-.stackBase:hover > img:nth-child(7) { left: 225px; top: -0px;}
- 
-.stackBase:hover > img:nth-child(8) { left: 75px; top: -100px;}
-.stackBase:hover > img:nth-child(9) { left: 150px; top: -125px;}
-.stackBase:hover > img:nth-child(10) { left: 225px; top: -150px;}
- 
-.col-J { left: 30px; }
-.col-K { left: 115px; }
-.col-L { left: 200px; }
-.col-M { left: 285px; }
-.col-N { left: 370px; }
-.col-O { left: 445px; }
-.col-P { left: 540px; }
-.col-Q { left: 625px; }
-.col-R { left: 710px;}
-.col-S { left: 795px; }
- 
-.row-1 { top: 75px; }
-.row-2 { top: 172px; }
-.row-3 { top: 269px; }
-.row-4 { top: 366px; }
-.row-5 { top: 463px; }
-.row-6 { top: 560px; }
-.row-7 { top: 754px; }
-.row-8 { top: 775px; }
-.row-9 { top: 851px; }
-.row-10 { top: 948px; }
- 
-.col-K, .col-M, .col-O, .col-Q, .col-S {
-    margin-top: -40px;
-}
- 
-</style>
- 
 <body>
 <h1>My First Heading</h1>
 <p>Jos klikkaat mitä vain pelimerkit feidaa ja tulee takas. Ideana on, että jos kartalla pistää hiiren napin pohjaan,
     niin sekunnin päästä pelimerkit menee piiloon, mutta tällä hetkellä menee piiloon kaikista klikeistä, sekunnin päästä -__-</p>
- 
+
 <button id="matkaaja-nappi">Siirrä matkaajaa!</button>
- 
+
 <!--Kartan populointi-->
 <div class="map">
- 
-    <div class="stackBase col-S row-2" id="matkaaja">
+
+    <div class="stackBase col-K row-7" id="matkaaja">
         <img src="./images/dm.gif">
         <img src="./images/geLMG.gif">
     </div>
- 
-    <div class="stackBase col-J row-1">
-        <img id="j1broken" src="./images/ges7b.gif">
+
+    <div class="stackBase col-J row-1" id="J1">
+        <img src="./images/ges7b.gif">
         <img src="./images/dm.gif">
         <img src="./images/geLMG.gif">
     </div>
- 
-    <div class="stackBase col-J row-4" id="j4">
-        <img id="j4broken" src="./images/rus7b.gif" class="pulser">
+
+    <div class="stackBase col-J row-4" id="J4">
+        <img src="./images/rus7b.gif" class="pulser">
         <img src="./images/dm.gif" class="pulser">
         <img src="./images/ruL70.gif">
     </div>
- 
-    <div class="stackBase col-J row-6" id="j6">
-        <img id="asdf" src="./images/ges7b.gif">
+
+    <div class="stackBase col-J row-6" id="J6">
+        <img src="./images/ges7b.gif">
         <img src="./images/ges7b.gif">
         <img src="./images/geh4b.gif">
         <img src="./images/dm.gif">
         <img src="./images/geL102.gif">
         <img src="./images/pin.gif">
- 
+
     </div>
- 
-    <div class="stackBase col-J row-9" id="j9">
+
+    <div class="stackBase col-J row-9" id="J9">
         <img src="./images/geL80.gif">
     </div>
- 
-    <div class="stackBase" id="j9" style="left: 115px; top: 30px">
+
+    <div class="stackBase col-K row-1 " id="K1">
         <img src="./images/ru447S.gif">
     </div>
- 
-    <div class="stackBase" id="m2" style="left: 280px; top: 120px">
+
+    <div class="stackBase col-K row-3 " id="K3">
+        <img src="./images/spw2511.gif" style="margin-top:-10px;margin-left:-10px;">
+        <img src="./images/ges7b.gif">
+        <img src="./images/dm.gif">
+    </div>
+
+    <div class="stackBase col-K row-6 " id="K6">
+        <img src="./images/ge467S.gif">
+        <img src="./images/cx.gif">
+    </div>
+
+    <div class="stackBase col-L row-8 " id="L8">
+        <img src="./images/rus7b.gif">
+        <img src="./images/dm.gif">
+        <img src="./images/pziiij.gif">
+        <img src="./images/CC.gif">
+    </div>
+
+    <div class="stackBase col-M row-2" id="M2">
         <img src="./images/Lev2.gif">
-        <img id="m2broken" src="./images/rus7b.gif" class="pulser">
+        <img src="./images/rus7b.gif" class="pulser">
         <img src="./images/dm.gif" class="pulser">
         <img src="./images/ruHMG.gif">
         <img src="./images/ruL91.gif">
         <img src="./images/ruHero.gif">
     </div>
- 
+
+    <div class="stackBase col-M row-5 " id="M5">
+        <img src="./images/rus7b.gif">
+    </div>
+
+    <div class="stackBase col-M row-7 " id="M7">
+        <img src="./images/ru447S.gif">
+    </div>
+
+    <div class="stackBase col-M row-9 " id="M9">
+        <img src="./images/ge467S.gif">
+    </div>
+
+    <div class="stackBase col-N row-3 " id="N3">
+        <img src="./images/rus7b.gif">
+    </div>
+
+    <div class="stackBase col-O row-1 " id="O1">
+        <img src="./images/ge467S.gif">
+    </div>
+
+    <div class="stackBase col-O row-5 " id="O5">
+        <img src="./images/rus7b.gif">
+        <img src="./images/dm.gif">
+    </div>
+
+    <div class="stackBase col-P row-5 " id="P5">
+        <img src="./images/ges7b.gif">
+        <img src="./images/dm.gif">
+    </div>
+
+    <div class="stackBase col-P row-8 " id="P8">
+        <img src="./images/ru237H.gif">
+        <img src="./images/ruLMG.gif">
+        <img src="./images/pin.gif">
+        <img src="./images/tacq.gif">
+    </div>
+
+    <div class="stackBase col-Q row-2 " id="Q2">
+        <img src="./images/rus5b.gif">
+        <img src="./images/Disrupt.gif">
+        <img src="./images/dm.gif">
+    </div>
+
+    <div class="stackBase col-Q row-8 " id="Q2">
+        <img src="./images/geL81.gif">
+        <img src="./images/pziiih.gif">
+        <img src="./images/shBU5.gif">
+    </div>
+
+    <div class="stackBase col-R row-1 " id="R1">
+        <img src="./images/ge467S.gif">
+    </div>
+
+    <div class="stackBase col-R row-2 " id="R2">
+        <img src="./images/rus7b.gif">
+        <img src="./images/dm.gif">
+        <img src="./images/foxhole.gif">
+    </div>
+
+    <div class="stackBase col-R row-5 " id="R5">
+        <img src="./images/ru447S.gif">
+        <img src="./images/ruqmark.gif">
+    </div>
+
+    <div class="stackBase col-R row-6 " id="R6">
+        <img src="./images/rus7b.gif">
+        <img src="./images/dm.gif">
+        <img src="./images/Encirc.gif">
+    </div>
+
+    <div class="stackBase col-R row-8 " id="R8">
+        <img src="./images/rus7b.gif">
+        <img src="./images/dm.gif">
+        <img src="./images/ge467S.gif">
+        <img src="./images/Melee.gif">
+    </div>
+
+    <div class="stackBase col-S row-2 " id="S2">
+        <img src="./images/rus7b.gif">
+        <img src="./images/dm.gif">
+        <img src="./images/ge467S.gif">
+        <img src="./images/Berserk.gif">
+        <img src="./images/CC.gif">
+    </div>
+
+    <div class="stackBase col-S row-3 " id="S3">
+        <img src="./images/rus7b.gif">
+        <img src="./images/dm.gif">
+    </div>
+
+    <div class="stackBase col-S row-5 " id="S5">
+        <img src="./images/ges7b.gif">
+        <img src="./images/dm.gif">
+        <img src="./images/ge467S.gif">
+    </div>
+
+    <div class="stackBase col-S row-6 " id="S6">
+        <img src="./images/ge467S.gif">
+    </div>
 </div>
- 
+
 </body>
 </html>

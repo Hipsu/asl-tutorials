@@ -1,0 +1,76 @@
+div.map {
+    position: absolute;
+    width: 900px;
+    height: 950px;
+    border: 1px solid black;
+    background-image: url("./images/map.png");
+}
+
+.stackBase {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transition: 350ms all ease;
+}
+
+.pulser {
+    animation: pulse 1s infinite
+}
+
+/* Tälläiset saa helposti sassilla tai lessillä,
+   mutta tänään käsin purkkamaisesti... */
+.stackBase > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 250ms all ease;
+}
+
+.stackBase > img:nth-child(2) { left: 5px; top: -5px;}
+.stackBase > img:nth-child(3) { left: 10px; top: -10px;}
+.stackBase > img:nth-child(4) { left: 15px; top: -15px;}
+.stackBase > img:nth-child(5) { left: 20px; top: -20px;}
+.stackBase > img:nth-child(6) { left: 25px; top: -25px;}
+.stackBase > img:nth-child(7) { left: 30px; top: -30px;}
+.stackBase > img:nth-child(8) { left: 35px; top: -35px;}
+.stackBase > img:nth-child(9) { left: 40px; top: -40px;}
+.stackBase > img:nth-child(10) { left: 45px; top: -45px;}
+
+.stackBase:hover > img { z-index: 10; transform: scale(1.5); }
+.stackBase:hover > img:nth-child(2) { left: 75px; top: -25px;}
+.stackBase:hover > img:nth-child(3) { left: 150px; top: -50px;}
+.stackBase:hover > img:nth-child(4) { left: 225px; top: -75px;}
+
+.stackBase:hover > img:nth-child(5) { left: 75px; top: 50px;}
+.stackBase:hover > img:nth-child(6) { left: 150px; top: 25px;}
+.stackBase:hover > img:nth-child(7) { left: 225px; top: -0px;}
+
+.stackBase:hover > img:nth-child(8) { left: 75px; top: -100px;}
+.stackBase:hover > img:nth-child(9) { left: 150px; top: -125px;}
+.stackBase:hover > img:nth-child(10) { left: 225px; top: -150px;}
+
+.col-J { left: 30px; }
+.col-K { left: 117px; }
+.col-L { left: 204px; }
+.col-M { left: 291px; }
+.col-N { left: 378px; }
+.col-O { left: 465px; }
+.col-P { left: 552px; }
+.col-Q { left: 639px; }
+.col-R { left: 726px;}
+.col-S { left: 813px; }
+
+.row-1 { top: 75px; }
+.row-2 { top: 175px; }
+.row-3 { top: 275px; }
+.row-4 { top: 375px; }
+.row-5 { top: 475px; }
+.row-6 { top: 575px; }
+.row-7 { top: 675px; }
+.row-8 { top: 775px; }
+.row-9 { top: 875px; }
+.row-10 { top: 975px; }
+
+.col-K, .col-M, .col-O, .col-Q, .col-S {
+    margin-top: -50px;
+}
